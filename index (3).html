@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SCORVEX G7 — Battle Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="boot"><div class="bootLogo">SCORVEX <b>G7</b></div><div class="load"><i id="loadBar"></i></div><small id="loadText">Cargando arena...</small></div>
+<main id="app" class="hidden">
+<header class="top"><div class="brand">SCORVEX <span>G7</span></div><div class="topBtns"><button id="musicBtn">🎵 MÚSICA</button><button id="soundBtn">🔊 SONIDO</button></div></header>
+<section id="menu" class="screen">
+<div class="hero"><div><p class="eyebrow">ULTIMATE BATTLE ARENA</p><h1>SCORVEX <span>G7</span></h1><p>Battle royale futurista con personajes personalizables, arsenal, habilidades y 4 estilos musicales.</p><button id="playBtn" class="primary">▶ JUGAR</button></div><canvas id="heroCanvas" width="520" height="360"></canvas></div>
+<div class="menuGrid">
+<section class="panel"><h2>🛒 ARMERÍA</h2><p>Compra y equipa armas desde el menú principal.</p><div class="currency"><b>🪙 <span id="menuCoins">0</span></b><b>💎 <span id="menuCrystals">0</span></b></div><div id="weaponShop" class="grid"></div></section>
+<section class="panel"><h2>🎵 MÚSICA</h2><p>Elige una de las cuatro pistas originales.</p><div id="musicChoices" class="musicGrid"></div></section>
+<section class="panel"><h2>🧍 PERSONAJE</h2><div id="characterChoices" class="grid"></div><button id="customBtn" class="secondary">🎨 PERSONALIZAR</button></section>
+<section class="panel"><h2>🎒 EQUIPAMIENTO</h2><div id="loadoutMenu" class="loadout"></div><button id="inventoryBtn" class="secondary">INVENTARIO</button></section>
+</div></section>
+<section id="game" class="screen hidden">
+<div class="gameTop"><div>SECTOR <b id="sector">1</b></div><div>❤️ <b id="hp">100</b></div><div>⚡ <b id="energy">100</b></div><div>⭐ <b id="xp">0</b></div><div>🪙 <b id="coins">0</b></div><div>💎 <b id="crystals">0</b></div><button id="pauseBtn">Ⅱ</button><button id="exitBtn">MENÚ</button></div>
+<div class="battleLayout"><aside class="side panel"><h3 id="weaponName">Arma</h3><p id="weaponStats"></p><button id="fireBtn" class="primary">🔫 DISPARAR</button><button id="abilityBtn" class="secondary">⚡ HABILIDAD [Q]</button><button id="medkitBtn" class="secondary">🩹 BOTIQUÍN [H]</button><div class="mission"><b>MISIÓN</b><p id="mission">Elimina enemigos</p><p>Oleada: <b id="wave">1</b></p><p>Nivel: <b id="level">1</b></p></div></aside><div class="arenaWrap"><canvas id="gameCanvas" width="1100" height="650"></canvas><div id="boss" class="boss hidden"><b id="bossName">BOSS</b><div><i id="bossBar"></i></div></div></div></div>
+<div class="mobileControls"><button data-key="w">▲</button><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></div>
+</section>
+</main>
+<div id="modal" class="modal hidden"><div class="modalBox"><button id="closeModal" class="x">×</button><h2 id="modalTitle"></h2><div id="modalBody"></div></div></div>
+<div id="customModal" class="modal hidden"><div class="modalBox"><button id="closeCustom" class="x">×</button><h2>🎨 PERSONALIZACIÓN</h2><div id="customChoices" class="grid"></div></div></div>
+<div id="toast"></div>
+<script src="game.js"></script>
+</body>
+</html>
